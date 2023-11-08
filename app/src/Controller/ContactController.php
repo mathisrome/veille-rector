@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ContactController extends AbstractController
 {
     #[Route('/', name: 'app_contact')]
-    public function indexAction(Request $request, MailerInterface $mailer): Response
+    public function index(Request $request): Response
     {
         $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
@@ -26,7 +26,7 @@ class ContactController extends AbstractController
         }
 
         return $this->render('contact/index.html.twig', [
-            'form' => $form->createView()
+            'form' => $form
         ]);
     }
 }
