@@ -9,12 +9,14 @@ use Rector\Symfony\Set\SymfonySetList;
 use Rector\Symfony\Symfony62\Rector\MethodCall\SimplifyFormRenderingRector;
 
 return static function (RectorConfig $rectorConfig): void {
+    // Permet de définir tous les chemins que doit parcourir Rector
     $rectorConfig->paths([
         __DIR__ . '/src',
     ]);
 
     // register a single rule
-    $rectorConfig->rule(SimplifyFormRenderingRector::class); // Symplify form rendering by not calling ->createView() on render function
+    // Symplify form rendering by not calling ->createView() on render function
+    $rectorConfig->rule(SimplifyFormRenderingRector::class);
 
     $rectorConfig->symfonyContainerXml(__DIR__ . '/var/cache/dev/App_KernelDevDebugContainer.xml');
 
