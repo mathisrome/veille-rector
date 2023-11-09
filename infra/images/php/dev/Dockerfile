@@ -7,7 +7,7 @@ RUN rm /bin/sh && ln -s /bin/bash /bin/sh
 RUN apt update && \
     apt install -y curl vim nano git zip npm && \
     curl https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash && \
-    source ~/.profile && \
+    source ~/.bashrc && \
     nvm install v20.7.0 && \
     nvm use v20.7.0
 
